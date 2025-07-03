@@ -1,0 +1,273 @@
+/* Base Styles - Mobile First */
+.about-us {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 20px;
+  margin: auto;
+  background-color: #f9f9f9;
+  animation: fadeIn 1s ease-in-out;
+  max-width: 95%;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: slideDown 1.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-section h1 {
+  font-size: 2rem;
+  color: #004aad;
+  transition: color 0.3s ease;
+}
+
+.hero-section h1:hover {
+  color: #007bff;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(40px); }
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: #007bff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  animation: growLine 1s ease;
+}
+
+@keyframes growLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+/* Content Flex Area */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.content:hover {
+  transform: scale(1.02);
+}
+
+.reverse .content {
+  flex-direction: column-reverse;
+}
+
+.content img {
+  width: 100%;
+  max-width: 500px;
+  height: 390px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.content img:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+  text-align: justify;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.features-list li {
+  margin: 10px 8px;
+  padding: 10px 20px;
+  background: #e8f0fe;
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.features-list li:hover {
+  background-color: #d0e5ff;
+  transform: translateY(-3px);
+}
+
+/* Footer Quote */
+.footer-quote {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #0077cc;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Floating Button */
+.aboutus-home-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  background-color: #007bff;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.aboutus-home-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+
+  .about-us {
+    max-width: 70%;
+    padding: 40px;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.3rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .reverse .content {
+    flex-direction: row-reverse;
+  }
+
+  .content p {
+    flex: 1;
+    font-size: 1.3rem;
+  }
+
+  .content img {
+    width: 45%;
+  }
+
+  .features-list {
+    font-size: 1.4rem;
+  }
+
+  .footer-quote {
+    font-size: 1.4rem;
+  }
+
+  .aboutus-home-btn {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-us {
+    max-width: 80%;
+    padding: 40px;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 2.3rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .features-list {
+    font-size: 1.6rem;
+  }
+
+  .footer-quote {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .aboutus-home-btn {
+    font-size: 1rem;
+    padding: 8px 12px;
+    gap: 2px;
+  }
+}

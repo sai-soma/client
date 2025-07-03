@@ -1,0 +1,315 @@
+.txn-container {
+  padding: 20px;
+  margin-top:40px;
+  max-width: auto;
+
+}
+
+.txn-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.txn-search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.txn-search input {
+  padding: 8px 30px 8px 10px;
+  font-size: 14px;
+  width: 240px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.txn-search-icon {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+.txn-table-wrapper {
+  overflow-x: auto;
+}
+
+.txn-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.txn-table th,
+.txn-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.txn-table th {
+  background-color: #f3f3f3;
+}
+
+.txn-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+.txn-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.txn-pagination button {
+  padding: 5px 12px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.txn-pagination button:hover {
+  background-color: #ddd;
+}
+
+.txn-pagination .active-page {
+  background-color: #007bff;
+  color: white;
+}
+/* Transaction History Styles */
+.txn-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.txn-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.txn-topbar h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.txn-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.txn-search input {
+  padding: 10px 40px 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 14px;
+  width: 300px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.txn-search input:focus {
+  border-color: #007bff;
+}
+
+.txn-search-icon {
+  position: absolute;
+  right: 15px;
+  color: #666;
+  font-size: 16px;
+}
+
+.txn-table-wrapper {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.txn-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.txn-table th {
+  background-color: #f8f9fa;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.txn-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.txn-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Transaction Type Badges */
+.txn-type-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.txn-type-badge.withdraw {
+  background-color: #6ec7ed;
+  color: white;
+}
+
+.txn-type-badge.reward {
+  background-color: #51cf66;
+  color: white;
+}
+
+/* Amount Styling */
+.negative-amount {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.positive-amount {
+  color: #51cf66;
+  font-weight: 600;
+}
+
+/* Mode/Job Title Styling */
+.mode-info {
+  font-size: 12px;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.credited {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.debited {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.approved {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-badge.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Pagination Styles */
+.txn-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.txn-pagination button {
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.txn-pagination button:hover:not(:disabled) {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.txn-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.txn-pagination button.active-page {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Empty State */
+.txn-table tbody tr td[colspan="7"] {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .txn-topbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .txn-search input {
+    width: 100%;
+  }
+
+  .txn-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .txn-table {
+    min-width: 700px;
+  }
+
+  .txn-pagination {
+    flex-wrap: wrap;
+  }
+}

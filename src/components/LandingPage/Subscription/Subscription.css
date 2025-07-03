@@ -1,0 +1,292 @@
+.main-subs-div {
+  display: flex;
+  justify-content: center; /* Horizontally center the container */
+  align-items: center; /* Vertically center the container */
+  height: 60vh; /* Set height to 60% of the viewport height */
+  background: white; /* Clean background */
+  padding: 20px; /* Added padding for spacing */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.stats-subscription-container {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Center items vertically */
+  background: linear-gradient(135deg, #000000 30%, #303030); /* Subtle black gradient */
+  padding: 35px; /* Padding for spacing */
+  border-radius: 20px; /* Rounded corners */
+  width: 90%; /* Width of the container */
+  max-width: 1200px; /* Limit max width for larger screens */
+  color: white; /* Text color */
+  flex-wrap: wrap; /* Allow items to wrap */
+  box-shadow: 0 8px 30px rgba(216, 219, 224, 0.15); /* Shadow for depth */
+  border: 2px solid rgba(0, 68, 204, 0.2); /* Border for definition */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  margin: 0 auto; /* Center the container */
+}
+
+.stats-subscription-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 40px rgba(222, 224, 227, 0.3);
+}
+
+.subscription-candidates-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  gap: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: inset 0 4px 8px rgba(0, 68, 204, 0.2);
+}
+
+.subscription-highlight {
+  background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  color: transparent;
+  background-clip: text;
+}
+
+.subscription-candidates-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 68, 204, 0.4);
+}
+
+.subscription-candidates-icon {
+  font-size: 3.5rem;
+  color: white;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.subscription-candidates-box:hover .subscription-candidates-icon {
+  transform: scale(1.3);
+  text-shadow: 0 0 15px rgba(0, 68, 204, 0.5);
+}
+
+.subscription-candidates-count {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 68, 204, 0.3);
+  margin-top: 8px;
+}
+
+.subscription-candidates-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-top: 5px;
+}
+
+.subscribe-box {
+  flex: 2;
+  min-width: 320px;
+  text-align: center;
+  padding: 15px;
+}
+
+.subscribe-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.subscribe-input-box {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 12px;
+  border-radius: 10px;
+  max-width: 380px;
+  margin: 0 auto;
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+.subscribe-input:focus {
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 68, 204, 0.3);
+  transform: scale(1.02);
+}
+
+.subscribe-button {
+  background: linear-gradient(135deg, #0044cc, #002288);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 68, 204, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.subscribe-button:hover::before {
+  left: 100%;
+}
+
+.subscribe-button:hover {
+  background: linear-gradient(135deg, #003399, #001166);
+  box-shadow: 0 8px 20px rgba(0, 68, 204, 0.5);
+  transform: scale(1.05);
+}
+
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .main-subs-div {
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .stats-subscription-container {
+    flex-direction:row; /* Stack items vertically */
+    padding: 20px; /* Adjust padding */
+    width: 100%; /* Full width */
+  }
+
+  .subscription-candidates-box {
+    min-width: 100%; /* Full width for boxes */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .subscribe-box {
+    min-width: 100%; /* Full width for subscribe box */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .subscribe-title {
+    font-size: 1.4rem; /* Smaller title */
+  }
+
+  .subscribe-input-box {
+    max-width: 100%; /* Full width for input box */
+    padding: 10px; /* Adjust padding */
+    left: 0px;
+  }
+
+  .subscribe-input {
+    font-size: 0.51rem; /* Smaller input font size */
+  }
+
+  .subscribe-button {
+    font-size: 0.9rem; /* Smaller button font size */
+    padding: 10px 15px; /* Adjust padding */
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-subs-div {
+    height: auto; /* Allow height to adjust based on content */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .stats-subscription-container {
+    flex-direction: row; /* Keep items in a row */
+    padding: 25px; /* Adjust padding */
+  }
+
+  .subscription-candidates-box {
+    min-width: 45%; /* Allow boxes to take up less space */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .subscribe-box {
+    min-width: 100%; /* Full width for subscribe box */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .subscribe-title {
+    font-size: 1.5rem; /* Adjust title size */
+  }
+
+  .subscribe-input-box {
+    max-width: 100%; /* Full width for input box */
+    padding: 12px; /* Adjust padding */
+  }
+
+  .subscribe-input {
+    font-size: 1rem; /* Adjust input font size */
+  }
+
+  .subscribe-button {
+    font-size: 1rem; /* Adjust button font size */
+    padding: 12px 18px; /* Adjust padding */
+  }
+}
+
+/* Large Desktops (769px and above) - maintain original */
+@media (min-width: 769px) {
+  .main-subs-div {
+    height: 60vh; /* Maintain original height */
+    padding: 20px; /* Maintain original padding */
+  }
+
+  .stats-subscription-container {
+    padding: 35px; /* Maintain original padding */
+  }
+
+  .subscription-candidates-box {
+    min-width: 250px; /* Maintain original min width */
+    padding: 25px; /* Maintain original padding */
+  }
+
+  .subscribe-box {
+    min-width: 320px; /* Maintain original min width */
+    padding: 15px; /* Maintain original padding */
+  }
+
+  .subscribe-title {
+    font-size: 1.6rem; /* Maintain original title size */
+  }
+
+  .subscribe-input-box {
+    max-width: 380px; /* Maintain original max width */
+    padding: 12px; /* Maintain original padding */
+  }
+
+  .subscribe-input {
+    font-size: 1rem; /* Maintain original input font size */
+  }
+
+  .subscribe-button {
+    font-size: 1rem; /* Maintain original button font size */
+    padding: 12px 18px; /* Maintain original padding */
+  }
+}

@@ -1,0 +1,306 @@
+/* Base Styles for Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2b2b2b;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+
+/* Navbar Text */
+.navbar-text {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  color: transparent;
+  background-clip: text;
+  font-color: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  transition: all 0.4s ease-in-out;
+}
+
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-links ul {
+  font-weight: bold;
+  display: flex;
+  list-style: none;
+  margin-right: 50px;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  transform: scale(0.85, 0.85);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links li:hover {
+  color: rgba(5, 135, 209, 255);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+
+/* Toggle Icon (Hamburger) */
+.navbar-toggle-icon {
+  display: none;
+  /* Hidden by default */
+  cursor: pointer;
+}
+
+/* Theme Toggle */
+.navbar-theme-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+/* Login Button */
+.navbar-login-btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #0587d1;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  transform: scale(0.85, 0.85);
+
+}
+
+.navbar-login-btn:hover {
+  background-color: #0587d1;
+  color: white;
+  transform: scale(1.1, 1.1);
+  transition: all 0.5s;
+
+
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ecf0f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #2b2b2b;
+}
+
+body.dark-mode .navbar-links li {
+  color: #ecf0f1;
+}
+
+body.dark-mode .navbar-links li:hover {
+  color: #3498db;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Tablets and Small Laptops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 12px 25px;
+  }
+
+  .navbar-text {
+    font-size: 22px;
+  }
+
+  .navbar-links ul {
+    margin-right: 30px;
+  }
+
+  .navbar-links li {
+    margin: 0 10px;
+  }
+
+  .navbar-login-btn {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-text {
+    font-size: 20px;
+  }
+
+  /* Hide menu initially */
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  /* Show Hamburger Icon */
+  .navbar-toggle-icon {
+    display: block;
+    font-size: 24px;
+    color: white;
+  }
+
+  /* Hide Theme Toggle */
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .navbar-login-btn {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 8px 18px;
+  }
+
+  .navbar-text {
+    font-size: 18px;
+  }
+
+  /* Hide menu initially */
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #1b1b1b;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    flex-direction: column;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  /* Show Hamburger Icon */
+  .navbar-toggle-icon {
+    display: block;
+    font-size: 22px;
+    color: white;
+  }
+
+  /* Hide Theme Toggle */
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .navbar-login-btn {
+    margin-right: 0;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+/* Small Screens (max-width: 380px) */
+@media screen and (max-width: 380px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-text {
+    font-size: 16px;
+  }
+
+  /* Hide menu initially */
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #34495e;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    flex-direction: column;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .navbar-links li {
+    margin: 8px 0;
+  }
+
+  /* Show Hamburger Icon */
+  .navbar-toggle-icon {
+    display: block;
+    font-size: 20px;
+    color: white;
+  }
+
+  /* Hide Theme Toggle */
+  .navbar-theme-toggle {
+    display: none;
+  }
+
+  .navbar-login-btn {
+    margin-right: 0;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}

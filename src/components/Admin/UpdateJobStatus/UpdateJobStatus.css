@@ -1,0 +1,198 @@
+.admin-job-status-container {
+  max-width: auto;
+  margin-top: 70px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: 100vh; 
+
+}
+.admin-job-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.admin-job-status-search-input {
+  padding: 8px 12px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-job-status-search-wrapper {
+  position: relative;
+  width: 250px;
+}
+
+
+.admin-job-status-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  padding-right: 35px; /* for icon space */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-job-status-search-button {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.admin-job-status-search-icon {
+  color: #888;
+}
+
+
+.admin-job-status-search-header {
+  position: relative;
+  width: 250px;
+}
+
+.admin-job-status-title {
+  font-size: 24px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.admin-job-status-loading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+
+.admin-job-status-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-job-status-table {
+  min-width: 1100px; /* or whatever is wider than the container */
+    width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.admin-job-status-table th,
+.admin-job-status-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-job-status-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.admin-job-status-no-data {
+  text-align: center;
+  color: #777;
+}
+.email-cell {
+  word-break: break-word;
+  max-width: 200px; /* or whatever width fits your layout */
+  white-space: normal;
+}
+
+.admin-job-status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.admin-job-status-pending {
+  background-color: #ffc107;
+}
+
+.admin-job-status-inProgress {
+  background-color: #28a745;
+}
+
+.admin-job-status-rejected {
+  background-color: #dc3545;
+}
+
+.admin-job-status-selected {
+  background-color: #17a2b8;
+}
+
+.admin-job-status-joined {
+  background-color: #6f42c1;
+}
+.admin-job-status-resigned {
+  background-color: #ec57f9;
+}
+
+.admin-job-status-dropdown {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.admin-job-status-pagination {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-job-status-pagination button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.admin-job-status-pagination button.active-page {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.admin-job-status-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .admin-job-status-container {
+    padding: 15px;
+  }
+
+  .admin-job-status-table {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-job-status-container {
+    padding: 10px;
+  }
+
+  .admin-job-status-table {
+    font-size: 12px;
+  }
+
+  .admin-job-status-dropdown {
+    padding: 4px 8px;
+  }
+}

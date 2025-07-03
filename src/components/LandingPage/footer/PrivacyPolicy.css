@@ -1,0 +1,285 @@
+.PP-container {
+  max-width: 82%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-size: 1.4rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.PP-content {
+  padding: 2rem;
+}
+
+.PP-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: #0a74da;
+  text-align: center;
+}
+
+.PP-section {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.PP-section-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0a74da;
+  transition: color 0.3s ease;
+}
+
+.PP-section-toggle:hover,
+.PP-section-toggle:focus {
+  color: #004a99;
+  outline: none;
+}
+
+.PP-arrow {
+  transition: transform 0.3s ease;
+  font-size: 2.2rem;
+  user-select: none;
+}
+
+.PP-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.PP-section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-left: 1rem;
+  color: #444;
+}
+
+.PP-section-content.expanded {
+  max-height: 1000px; /* large enough for content */
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.PP-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.PP-table th,
+.PP-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+.PP-table th {
+  background-color: #0a74da;
+  color: white;
+}
+
+.privacy-home-btn {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.privacy-home-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.PP-footer p {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Styles */
+
+/* Mobile (<=480px) */
+@media (max-width: 480px) {
+  .PP-container {
+    max-width: 95%;
+    margin: 1rem auto;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    padding: 0 0.75rem;
+  }
+
+  .PP-content {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  .PP-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .PP-section-toggle {
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+  }
+
+  .PP-arrow {
+    font-size: 1.6rem;
+  }
+
+  .PP-section-content.expanded {
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+    max-height: 800px;
+  }
+
+  .PP-table {
+    font-size: 0.5rem;
+  }
+
+  .PP-table th,
+  .PP-table td {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .privacy-home-btn {
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    gap: 6px;
+  }
+
+  .PP-footer p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .PP-container {
+    max-width: 90%;
+    font-size: 1.25rem;
+    padding: 0 1rem;
+  }
+
+  .PP-content {
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  .PP-title {
+    font-size: 1.9rem;
+  }
+
+  .PP-section-toggle {
+    font-size: 1.5rem;
+    padding: 0.65rem 0;
+  }
+
+  .PP-arrow {
+    font-size: 1.8rem;
+  }
+
+  .PP-section-content.expanded {
+    max-height: 900px;
+    padding: 0.85rem 0.85rem 0.85rem 0.85rem;
+  }
+
+  .PP-table {
+    font-size: 1.15rem;
+  }
+
+  .PP-table th,
+  .PP-table td {
+    padding: 0.45rem 0.85rem;
+  }
+
+  .privacy-home-btn {
+    top: 1.25rem;
+    left: 1.25rem;
+    font-size: 0.95rem;
+    padding: 9px 16px;
+  }
+
+  .PP-footer p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktop (>=769px) */
+@media (min-width: 769px) {
+  .PP-container {
+    max-width: 82%;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+
+  .PP-content {
+    padding: 2rem;
+  }
+
+  .PP-title {
+    font-size: 2.2rem;
+  }
+
+  .PP-section-toggle {
+    font-size: 1.8rem;
+    padding: 0.75rem 0;
+  }
+
+  .PP-arrow {
+    font-size: 2.2rem;
+  }
+
+  .PP-section-content.expanded {
+    max-height: 1000px;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+
+  .PP-table {
+    font-size: 1.3rem;
+  }
+
+  .PP-table th,
+  .PP-table td {
+    padding: 0.5rem 1rem;
+  }
+
+  .privacy-home-btn {
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .PP-footer p {
+    font-size: 1rem;
+  }
+}

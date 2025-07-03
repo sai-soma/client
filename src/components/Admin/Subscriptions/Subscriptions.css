@@ -1,0 +1,149 @@
+.admin-subscriptions-container {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
+}
+
+.admin-subscriptions-heading {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Search bar styling */
+.search-bar-container {
+  display: flex;
+  justify-content: flex-start; /* Align to left */
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background-color: #f9f9f9;
+}
+
+.search-icon {
+  margin-right: 8px;
+  color: #888;
+  font-size: 18px;
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.admin-subscriptions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.admin-subscriptions-table th,
+.admin-subscriptions-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-subscriptions-table th {
+  background: rgba(5, 135, 209, 1);
+  color: white;
+  text-transform: uppercase;
+}
+
+.admin-subscriptions-table tbody tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.admin-subscriptions-table tbody tr:hover {
+  background-color: #f0f0f0;
+  transition: background 0.3s ease;
+}
+
+.admin-subscriptions-table td {
+  color: #333;
+  font-size: 16px;
+}
+
+/* Delete button styling */
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.page-btn {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.page-btn.active {
+  background-color: green;
+  color: white;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #bbb;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-subscriptions-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .admin-subscriptions-table th,
+  .admin-subscriptions-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+}

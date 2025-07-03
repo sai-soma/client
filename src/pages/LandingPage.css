@@ -1,0 +1,43 @@
+/* LandingPage.css */
+
+/* Global box-sizing for predictable layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin/padding and prevent horizontal scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure full width */
+  max-width: 100%; /* Prevent overflow */
+  min-height: 100vh; /* Ensure full height */
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* Optional container to center content and restrict max width */
+.landing-page-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 16px;
+  overflow-x: hidden; /* This prevents horizontal scroll inside this container */
+  position: relative;
+}
+.section-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Flex container to prevent overflow */
+.flex-no-overflow {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  flex-wrap: wrap; /* Allow items to wrap */
+}

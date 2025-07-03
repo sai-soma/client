@@ -1,0 +1,160 @@
+/* UserDashboard.css */
+.user-dashboard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8fafc;
+  min-height: 100vh;
+  margin-top: 30px;
+}
+
+.user-dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.user-dashboard-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+.user-dashboard-widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.user-dashboard-widget {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.user-dashboard-widget:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.widget-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+
+.user-dashboard-widget-icon {
+  font-size: 1.95rem;
+  color: white;
+}
+
+/* Gradient color sets */
+.referral-widget .widget-icon-container {
+  background: linear-gradient(135deg, #C19A6B, #bb751f);
+}
+
+.applied-widget .widget-icon-container {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.progress-widget .widget-icon-container {
+  background: linear-gradient(135deg, rgb(200, 22, 249), rgb(148, 58, 142));
+}
+
+.joined-widget .widget-icon-container {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.wallet-widget .widget-icon-container {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.earn-widget .widget-icon-container {
+  background: linear-gradient(135deg, #facc15, #eab308);
+}
+
+.selected-widget .widget-icon-container {
+  background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+}
+
+.rejected-widget .widget-icon-container {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.user-dashboard-widget-info {
+  flex: 1;
+}
+
+.user-dashboard-widget-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #64748b;
+}
+
+.user-dashboard-widget-info p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0;
+  color: #1e293b;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .user-dashboard {
+    padding: 1rem; /* Reduce padding on smaller screens */
+    margin-bottom: 150px;
+  }
+
+  .user-dashboard-title {
+    font-size: 1.5rem; /* Smaller title font size */
+  }
+
+  .user-dashboard-widgets {
+    grid-template-columns: 1fr; /* Stack widgets vertically */
+    gap: 1rem; /* Reduce gap between widgets */
+  }
+
+  .user-dashboard-widget {
+    padding: 1rem; /* Reduce padding in widgets */
+  }
+
+  .widget-icon-container {
+    width: 5rem; /* Smaller icon container */
+    height: 5rem; /* Smaller icon container */
+  }
+
+  .user-dashboard-widget-icon {
+    font-size: 1.5rem; /* Smaller icon size */
+  }
+
+  .user-dashboard-widget-info h3 {
+    font-size: 0.9rem; /* Smaller heading font size */
+  }
+
+  .user-dashboard-widget-info p {
+    font-size: 1.2rem; /* Smaller paragraph font size */
+  }
+}

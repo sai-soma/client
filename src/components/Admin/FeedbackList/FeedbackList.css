@@ -1,0 +1,164 @@
+.FL-container {
+  padding: 30px;
+  background-color: #f9fafb;
+  color: #333;
+  margin-top: 70px;
+  margin-left: 30px;
+}
+
+.FL-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.FL-loading,
+.FL-error,
+.FL-no-data {
+  font-size: 16px;
+  padding: 12px;
+  margin-top: 20px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.FL-loading {
+  background-color: #fffbe6;
+  color: #856404;
+}
+
+.FL-error {
+  background-color: #fdecea;
+  color: #b71c1c;
+}
+
+.FL-no-data {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.FL-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.FL-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  min-width: 800px;
+}
+
+.FL-thead {
+  background-color: #e0e0e0;
+}
+
+.FL-header-row {
+  text-align: center;
+}
+
+.FL-th {
+  padding: 14px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+  background-color: blue;
+}
+
+.FL-th:hover {
+  background-color: #d5d5d5;
+}
+
+.FL-tbody {
+  background-color: #fff;
+}
+
+.FL-row:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.FL-cell {
+  padding: 12px 20px;
+  font-size: 14px;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.FL-priority-low {
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.FL-priority-medium {
+  color: #fbc02d;
+  font-weight: 500;
+}
+
+.FL-priority-high {
+  color: #d32f2f;
+  font-weight: 600;
+}
+.FL-pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.FL-page-btn {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.FL-page-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.FL-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+@media screen and (max-width: 768px) {
+  .FL-container {
+    padding: 15px;
+  }
+
+  .FL-heading {
+    font-size: 22px;
+  }
+
+  .FL-th, .FL-cell {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .FL-table {
+    min-width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .FL-heading {
+    font-size: 20px;
+  }
+
+  .FL-th, .FL-cell {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .FL-table {
+    min-width: 500px;
+  }
+}

@@ -1,0 +1,255 @@
+.resume-upload-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  z-index: 9998;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow-y: auto !important;
+  padding: 40px 20px !important;
+}
+
+.resume-upload-container {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto !important;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Keep this for content alignment */
+  align-items: center; /* Center content horizontally */
+}
+
+
+.resume-upload-title {
+  font-size: 24px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.resume-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-close-button:hover {
+  background-color: #a71d2a;
+}
+
+.filestyle {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.filestyle:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.resume-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.view-btn:hover {
+  background-color: #1e7e34;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.upload-message {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .resume-upload-container {
+    padding: 15px;
+  }
+
+  .filestyle {
+    font-size: 14px;
+  }
+
+  .resume-button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* =================== */
+/* TABLET (769px - 1024px) */
+/* =================== */
+@media (max-width: 1024px) {
+  .resume-upload-container {
+    width: 80%;
+    height: auto;
+    margin-left: 50px;
+    padding: 16px;
+  }
+
+  .resume-upload-title {
+    font-size: 22px;
+  }
+
+  .filestyle {
+    font-size: 15px;
+  }
+
+  .resume-button {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+
+  .resume-close-button {
+    font-size: 16px;
+    padding: 4px 9px;
+  }
+}
+
+/* =================== */
+/* MOBILE LARGE (480px - 768px) */
+/* =================== */
+@media (max-width: 768px) {
+  .resume-upload-container {
+    width: 85%;
+    max-height: 80vh; /* limit modal height */
+    overflow-y: auto; /* scroll content */
+    padding: 0.8rem;
+    margin-left: 0;
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .resume-upload-overlay {
+    align-items: flex-start; /* allow modal to grow downward */
+    overflow-y: auto; /* enables scrolling */
+    padding: 40px 20px; /* add spacing from top/bottom */
+  }
+
+  .resume-upload-title {
+    font-size: 20px;
+  }
+
+  .filestyle {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .resume-button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .resume-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .resume-close-button {
+    font-size: 15px;
+    padding: 3px 8px;
+  }
+}
+
+/* =================== */
+/* MOBILE SMALL (<= 479px) */
+/* =================== */
+@media (max-width: 479px) {
+  .resume-upload-container {
+    width: 85%;
+    max-height: 80vh; /* limit modal height */
+    overflow-y: auto; /* scroll content */
+    padding: 0.8rem;
+    margin-left: 0;
+    height: 80vh;
+    overflow-y: auto;
+  }
+
+  .resume-upload-overlay {
+    align-items: flex-start; /* allow modal to grow downward */
+    overflow-y: auto; /* enables scrolling */
+    padding: 40px 20px; /* add spacing from top/bottom */
+  }
+
+  .resume-upload-title {
+    font-size: 18px;
+  }
+
+  .filestyle {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .resume-button {
+    font-size: 13px;
+    padding: 7px 12px;
+    width: 100%;
+  }
+
+  .resume-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .resume-close-button {
+    font-size: 14px;
+    padding: 2px 6px;
+  }
+
+  .upload-message {
+    font-size: 13px;
+  }
+}

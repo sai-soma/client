@@ -1,0 +1,207 @@
+.withdraw-approval-container {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+max-width: auto;
+margin: 0 auto;
+padding: 1.5rem;
+color: #333;
+background-color: #f8fafc;
+border-radius: 12px;
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+margin-left: 25px;
+margin-top:70px;
+}
+/* Top bar with search and header */
+.withdraw-approval-topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1.5rem;
+padding-bottom: 1rem;
+border-bottom: 1px solid #e5e7eb;
+}
+.withdraw-approval-header {
+font-size: 1.5rem;
+font-weight: 600;
+color: #1e293b;
+}
+/* Search box styling */
+.withdraw-approval-search-box input {
+width: 320px;
+padding: 0.75rem 1rem;
+border: 1px solid #e2e8f0;
+border-radius: 8px;
+font-size: 0.95rem;
+background-color: white;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+transition: all 0.2s ease;
+}
+.withdraw-approval-search-box input:focus {
+outline: none;
+border-color: #3b82f6;
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+/* Table container with horizontal scroll for mobile */
+.withdraw-approval-table-wrapper {
+overflow-x: auto;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+background: white;
+}
+/* Table styling */
+.withdraw-approval-table {
+width: 100%;
+border-collapse: collapse;
+table-layout: fixed;
+font-size: 0.875rem;
+}
+/* Column widths based on content needs /
+.withdraw-approval-table th:nth-child(1) { width: 100px; } / User ID /
+.withdraw-approval-table th:nth-child(2) { width: 130px; } / Full Name /
+.withdraw-approval-table th:nth-child(3) { width: 180px; } / Details /
+.withdraw-approval-table th:nth-child(4) { width: 240px; } / Bank Details /
+.withdraw-approval-table th:nth-child(5),
+.withdraw-approval-table th:nth-child(6) { width: 120px; } / Earnings/Amount /
+.withdraw-approval-table th:nth-child(7) { width: 100px; } / Date /
+.withdraw-approval-table th:nth-child(8) { width: 100px; } / Status /
+.withdraw-approval-table th:nth-child(9) { width: 180px; } / Payment Mode /
+.withdraw-approval-table th:nth-child(10) { width: 160px; } / Action */
+/* Table header styling */
+.withdraw-approval-table thead tr {
+background-color: #f1f5f9;
+border-bottom: 2px solid #e2e8f0;
+}
+.withdraw-approval-table th {
+padding: 1rem 0.75rem;
+text-align: left;
+font-weight: 600;
+color: #475569;
+text-transform: uppercase;
+font-size: 0.65rem;
+letter-spacing: 0.05em;
+position: sticky;
+top: 0;
+background-color: #f1f5f9;
+z-index: 10;
+}
+/* Table cell styling */
+.withdraw-approval-table td {
+padding: 1rem 0.75rem;
+border-bottom: 1px solid #e5e7eb;
+color: #475569;
+}
+/* Even rows background for better readability */
+.withdraw-approval-table tbody tr:nth-child(even) {
+background-color: #f8fafc;
+}
+/* Row hover effect */
+.withdraw-approval-table tbody tr:hover {
+background-color: #f0f9ff;
+}
+/* Empty state styling */
+.withdraw-approval-table tbody tr td[colspan] {
+padding: 2rem;
+text-align: center;
+color: #64748b;
+font-style: italic;
+}
+/* Styling for bank details and other info in cells */
+.withdraw-approval-table td strong {
+font-weight: 600;
+color: #334155;
+margin-right: 0.25rem;
+display: inline-block;
+}
+/* Select dropdown for payment mode */
+.withdraw-approval-table select {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #cbd5e1;
+border-radius: 6px;
+background-color: white;
+font-size: 0.65rem;
+color: #1e293b;
+cursor: pointer;
+transition: all 0.2s;
+}
+.withdraw-approval-table select:focus {
+outline: none;
+border-color: #3b82f6;
+box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+/* Button styling */
+.withdraw-approval-approve-btn,
+.withdraw-approval-reject-btn {
+display: block;
+width: 100%;
+margin-bottom: 0.5rem;
+padding: 0.5rem 0.4rem;
+border: none;
+border-radius: 6px;
+font-weight: 400;
+font-size: 0.7rem;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.withdraw-approval-approve-btn {
+background-color: #22c55e;
+color: white;
+}
+.withdraw-approval-approve-btn:hover {
+background-color: #16a34a;
+}
+.withdraw-approval-reject-btn {
+background-color: #ef4444;
+color: white;
+}
+.withdraw-approval-reject-btn:hover {
+background-color: #dc2626;
+}
+.withdraw-approval-disabled-btn {
+opacity: 0.5;
+cursor: not-allowed;
+}
+.withdraw-approval-disabled-btn:hover {
+opacity: 0.5;
+}
+/* Currency styling */
+.withdraw-approval-table td:nth-child(5),
+.withdraw-approval-table td:nth-child(6) {
+font-weight: 500;
+}
+/* Status styling */
+.withdraw-approval-table td:nth-child(8) {
+font-weight: 500;
+color: #f59e0b;
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+.withdraw-approval-topbar {
+flex-direction: column;
+align-items: flex-start;
+gap: 1rem;
+}
+.withdraw-approval-search-box input {
+width: 100%;
+}
+}
+/* Additional responsiveness for smaller screens */
+@media (max-width: 768px) {
+.withdraw-approval-container {
+padding: 1rem;
+}
+.withdraw-approval-header {
+font-size: 1.25rem;
+}
+}
+/* Text wrapping for table cells */
+.withdraw-approval-table td {
+white-space: normal;
+word-wrap: break-word;
+overflow-wrap: break-word;
+hyphens: auto;
+max-width: 0;
+vertical-align: top;
+}
+.bank-data{
+width: 250px;
+}

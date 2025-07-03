@@ -1,0 +1,1026 @@
+/* Base Styles - Optimized for A4 Paper */
+.rbc-container {
+  max-width: auto;
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 70px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Template Selection */
+.rbc-template-selection {
+  text-align: center;
+  padding: 15px;
+}
+
+.rbc-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.rbc-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.rbc-template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.rbc-template-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rbc-template-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.rbc-template-card.selected {
+  border: 2px solid #3498db;
+}
+
+.rbc-template-preview {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rbc-template-header {
+  height: 25px;
+}
+
+.rbc-template-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+}
+
+.rbc-template-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rbc-template-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+}
+
+.rbc-template-select-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.rbc-template-select-btn.selected {
+  color: white;
+  background: #3498db;
+}
+
+.rbc-start-building-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background: #3498db;
+}
+
+.rbc-start-building-btn:hover {
+  opacity: 0.9;
+}
+
+/* Form Styles */
+.rbc-form {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rbc-progress-container {
+  margin-bottom: 20px;
+}
+
+.rbc-progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.rbc-progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #eee;
+  z-index: 1;
+}
+
+.rbc-progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.rbc-progress-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.rbc-progress-step.active .rbc-progress-icon {
+  background: #3498db;
+  color: white;
+}
+
+.rbc-progress-step.completed .rbc-progress-icon {
+  background: #2ecc71;
+  color: white;
+}
+
+.rbc-progress-label {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #666;
+  max-width: 70px;
+}
+
+.rbc-progress-step.active .rbc-progress-label,
+.rbc-progress-step.completed .rbc-progress-label {
+  color: #333;
+  font-weight: bold;
+}
+
+.rbc-form-page {
+  margin-bottom: 15px;
+}
+
+.rbc-form-section {
+  margin-bottom: 20px;
+}
+
+.rbc-section-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rbc-subsection-title {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rbc-input-group {
+  margin-bottom: 15px;
+}
+
+.rbc-input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.rbc-input-field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.rbc-input-field:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
+}
+
+.rbc-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.rbc-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
+}
+
+.rbc-dynamic-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  border-left: 3px solid #ddd;
+}
+
+.rbc-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.rbc-btn-primary {
+  background: #3498db;
+  color: white;
+}
+
+.rbc-btn-primary:hover {
+  background: #2980b9;
+}
+
+.rbc-btn-secondary {
+  background: #ecf0f1;
+  color: #333;
+}
+
+.rbc-btn-secondary:hover {
+  background: #d5dbdb;
+}
+
+.rbc-btn-add {
+  background: #2ecc71;
+  color: white;
+}
+
+.rbc-btn-add:hover {
+  background: #27ae60;
+}
+
+.rbc-btn-remove {
+  background: #e74c3c;
+  color: white;
+  margin-top: 8px;
+}
+
+.rbc-btn-remove:hover {
+  background: #c0392b;
+}
+
+.rbc-btn-download {
+  background: #9b59b6;
+  color: white;
+}
+
+.rbc-btn-download:hover {
+  background: #8e44ad;
+}
+
+.rbc-btn-change-template {
+  background: #f39c12;
+  color: white;
+}
+
+.rbc-btn-change-template:hover {
+  background: #e67e22;
+}
+
+.rbc-form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Profile Picture Styles */
+.rbc-profile-pic-section {
+  margin-bottom: 10px;
+}
+
+.rbc-profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rbc-profile-pic-preview {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #eee;
+}
+
+.rbc-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rbc-remove-pic {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(231, 76, 60, 0.8);
+  color: white;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.rbc-profile-pic-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  border: 2px dashed #ccc;
+}
+
+.rbc-camera-icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.rbc-profile-pic-note {
+  font-size: 0.7rem;
+  color: #666;
+  text-align: center;
+  max-width: 200px;
+}
+
+.rbc-file-input {
+  display: none;
+}
+
+/* Preview Styles - A4 Optimized */
+.rbc-preview-page {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin-top: 70px;
+}
+
+.rbc-preview-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rbc-preview {
+  background: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 100%;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+
+/* PDF Export Specific Styles */
+.rbc-preview.pdf-export {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 2rem !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  background: white !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-name {
+  font-size: 20pt !important;
+  margin-bottom: 4mm !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-section-title {
+  font-size: 13pt !important;
+  margin-bottom: 3mm !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-item-title {
+  font-size: 11pt !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-text,
+.rbc-preview.pdf-export .rbc-preview-date,
+.rbc-preview.pdf-export .rbc-contact-item {
+  font-size: 9pt !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-bullet,
+.rbc-preview.pdf-export .rbc-timeline-bullet {
+  font-size: 9pt !important;
+}
+
+.rbc-preview.pdf-export .rbc-preview-section {
+  margin-bottom: 4mm !important;
+  page-break-inside: avoid;
+}
+
+.rbc-preview.pdf-export .rbc-preview-controls {
+  display: none !important;
+}
+
+/* Header Styles */
+.rbc-preview-header-modern {
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 12mm;
+  padding-bottom: 2mm;
+}
+
+.rbc-preview-header-classic {
+  border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 10mm;
+  padding-bottom: 2mm;
+}
+
+.rbc-preview-header-tech {
+  background: var(--primary-color);
+  color: white;
+  padding: 12mm;
+  margin: -20mm -15mm 12mm -15mm;
+}
+
+.rbc-preview-header-academic {
+  border-bottom: 1.5px solid var(--primary-color);
+  margin-bottom: 10mm;
+  padding-bottom: 3mm;
+}
+
+.rbc-preview-header-minimal {
+  margin-bottom: 12mm;
+}
+
+/* Section Styles */
+.rbc-preview-section-border-left {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 10mm;
+  margin-bottom: 8mm;
+}
+
+.rbc-preview-section-border-bottom {
+  border-bottom: 1px solid var(--secondary-color);
+  padding-bottom: 6mm;
+  margin-bottom: 8mm;
+}
+
+.rbc-preview-section-timeline {
+  margin-bottom: 8mm;
+}
+
+/* Personal Info */
+.rbc-preview-personal {
+  margin-bottom: 3mm;
+}
+
+.rbc-preview-profile-pic {
+  width: 20mm;
+  height: 20mm;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 3mm auto;
+  border: 2px solid var(--primary-color);
+}
+
+.rbc-preview-profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rbc-preview-name {
+  font-size: 12pt;
+  color: var(--primary-color);
+  margin-bottom: 3mm;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.rbc-preview-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2mm;
+  margin-bottom: 3mm;
+}
+
+.rbc-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  font-size: 7pt;
+  color: #555;
+}
+
+/* Section Titles */
+.rbc-preview-section-title {
+  font-size: 12pt;
+  color: var(--primary-color);
+  margin-bottom: 5mm;
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1mm;
+}
+
+/* Preview Items */
+.rbc-preview-item {
+  margin-bottom: 6mm;
+  page-break-inside: avoid;
+}
+
+.rbc-preview-item-title {
+  font-size: 10pt;
+  color: #333;
+  margin-bottom: 2mm;
+  font-weight: 600;
+}
+
+.rbc-preview-date {
+  font-size: 8pt;
+  color: #666;
+  margin-bottom: 2mm;
+  font-style: italic;
+}
+
+.rbc-preview-text {
+  font-size: 9pt;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 2mm;
+  text-align: justify;
+}
+
+.rbc-preview-bullet {
+  margin-left: 5mm;
+  position: relative;
+  line-height: 1.4;
+  font-size: 9pt;
+  margin-bottom: 1mm;
+}
+
+.rbc-preview-bullet::before {
+  content: '•';
+  position: absolute;
+  left: -4mm;
+  color: var(--primary-color);
+}
+
+.rbc-preview-tech {
+  font-size: 8pt;
+  color: #555;
+  margin-bottom: 2mm;
+  font-style: italic;
+}
+
+/* Skills */
+.rbc-preview-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2mm;
+}
+
+.rbc-skill-tag {
+  background: var(--secondary-color);
+  color: white;
+  padding: 1.5mm 3mm;
+  border-radius: 2mm;
+  font-size: 8pt;
+  font-weight: 500;
+}
+
+/* Lists */
+.rbc-preview-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.rbc-preview-list-item {
+  margin-bottom: 1.5mm;
+  position: relative;
+  padding-left: 5mm;
+  font-size: 9pt;
+  line-height: 1.3;
+}
+
+.rbc-preview-list-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Two Column Layout */
+.two-column {
+  display: grid;
+  grid-template-columns: 65mm 1fr;
+  gap: 10mm;
+}
+
+/* Timeline Layout */
+.timeline .rbc-preview-personal {
+  text-align: center;
+  margin-bottom: 3mm;
+}
+
+.rbc-timeline-container {
+  margin: 8mm 0;
+}
+
+.rbc-timeline {
+  position: relative;
+  padding-left: 8mm;
+}
+
+.rbc-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2mm;
+  width: 1px;
+  background: var(--primary-color);
+}
+
+.rbc-timeline-item {
+  position: relative;
+  margin-bottom: 8mm;
+  page-break-inside: avoid;
+}
+
+.rbc-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8mm;
+  top: 2mm;
+  width: 4mm;
+  height: 4mm;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 1px solid white;
+  box-sizing: border-box;
+}
+
+.rbc-timeline-date {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1mm;
+  font-size: 9pt;
+}
+
+.rbc-timeline-content {
+  background: #f9f9f9;
+  padding: 4mm;
+  border-radius: 2mm;
+  border-left: 2px solid var(--primary-color);
+}
+
+.rbc-timeline-title {
+  font-size: 10pt;
+  color: #333;
+  margin-bottom: 2mm;
+  font-weight: 600;
+}
+
+.rbc-timeline-institution {
+  font-size: 8pt;
+  color: #666;
+  margin-bottom: 2mm;
+  font-style: italic;
+}
+
+.rbc-timeline-detail {
+  font-size: 8pt;
+  color: #444;
+  margin-bottom: 2mm;
+  line-height: 1.3;
+}
+
+.rbc-timeline-details {
+  margin-top: 3mm;
+}
+
+.rbc-timeline-bullet {
+  margin-left: 5mm;
+  position: relative;
+  line-height: 1.3;
+  font-size: 8pt;
+  margin-bottom: 1mm;
+}
+
+.rbc-timeline-bullet::before {
+  content: '•';
+  position: absolute;
+  left: -4mm;
+  color: var(--primary-color);
+}
+
+.rbc-preview-bottom-sections {
+  margin-top: 10mm;
+}
+
+/* Tablet Responsive Styles (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rbc-container {
+    padding: 8px;
+    margin-top: 80px;
+  }
+  
+  .rbc-title {
+    font-size: 1.8rem;
+  }
+  
+  .rbc-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .rbc-template-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .rbc-progress-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .rbc-progress-label {
+    font-size: 0.7rem;
+  }
+  
+  .rbc-section-title {
+    font-size: 1.1rem;
+  }
+  
+  .rbc-preview {
+    padding: 15mm 12mm;
+    font-size: 10pt;
+  }
+  
+  .rbc-preview-name {
+    font-size: 16pt;
+  }
+  
+  .rbc-preview-section-title {
+    font-size: 11pt;
+  }
+  
+  .two-column {
+    gap: 8mm;
+  }
+}
+
+/* Mobile Responsive Styles (up to 767px) */
+/* --- Mobile styles --- */
+@media (max-width: 767px) {
+  .rbc-container {
+    padding: 8px;
+    margin-bottom: 60px;
+  }
+  
+  .rbc-title {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+  
+  .rbc-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .rbc-template-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .rbc-progress-steps {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .rbc-progress-steps::before {
+    display: none;
+  }
+  
+  .rbc-progress-step {
+    flex: 0 0 25%;
+    margin-bottom: 8px;
+  }
+  
+  .rbc-progress-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .rbc-progress-label {
+    font-size: 0.65rem;
+    max-width: 55px;
+  }
+  
+  .rbc-section-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .rbc-form {
+    padding: 12px;
+  }
+  
+  .rbc-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .rbc-form-navigation {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .rbc-form-navigation .rbc-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .rbc-preview {
+    padding: 10mm 8mm;
+    font-size: 9pt;
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .rbc-preview-name {
+    font-size: 14pt;
+  }
+  
+  .rbc-preview-section-title {
+    font-size: 10pt;
+  }
+  
+  .rbc-preview-item-title {
+    font-size: 9pt;
+  }
+  
+  .rbc-preview-text,
+  .rbc-preview-date,
+  .rbc-timeline-detail,
+  .rbc-timeline-bullet,
+  .rbc-contact-item {
+    font-size: 8pt;
+  }
+  
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 6mm;
+  }
+  
+  .rbc-profile-pic-preview,
+  .rbc-profile-pic-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .rbc-preview-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .rbc-preview-controls .rbc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .rbc-timeline {
+    padding-left: 6mm;
+  }
+  
+  .rbc-timeline::before {
+    left: 1.5mm;
+  }
+  
+  .rbc-timeline-item::before {
+    width: 3mm;
+    height: 3mm;
+    left: -6mm;
+  }
+  
+  .rbc-timeline-content {
+    padding: 3mm;
+  }
+  
+  .rbc-skill-tag {
+    padding: 1mm 2mm;
+    font-size: 7pt;
+  }
+
+}
+/* Print Styles for A4 */
+@media print {
+  .rbc-preview {
+    width: 210mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 20mm 15mm !important;
+    box-shadow: none !important;
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+  
+  .rbc-preview-controls {
+    display: none !important;
+  }
+  
+  .rbc-preview-name {
+    font-size: 18pt !important;
+  }
+  
+  .rbc-preview-section-title {
+    font-size: 12pt !important;
+  }
+  
+  .rbc-preview-item-title {
+    font-size: 10pt !important;
+  }
+  
+  .rbc-preview-text,
+  .rbc-preview-date,
+  .rbc-contact-item {
+    font-size: 9pt !important;
+  }
+}

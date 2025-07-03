@@ -1,0 +1,767 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Light Mode Color Palette */
+  --color-default: #ffffff;
+  --color-second: #f8f9fa;
+  --color-white: #004f83;
+  --color-body: #ffffff;
+  --color-light: #e9ecef;
+  --color-hover: #0056b3;
+  --color-active: #004f83;
+  --user-color-active: #bb86fc;
+  --color-text-primary: #004f83;
+  --color-text-secondary: #495057;
+  --color-text-muted: #6c757d;
+  --color-background: #f8f9fa;
+  --color-surface: rgba(0, 79, 131, 0.05);
+  --color-border: rgba(0, 79, 131, 0.1);
+  --color-shadow: rgba(0, 79, 131, 0.1);
+  --color-shadow-heavy: rgba(0, 79, 131, 0.3);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 79, 131, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 79, 131, 0.1), 0 2px 4px -1px rgba(0, 79, 131, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 79, 131, 0.1), 0 4px 6px -2px rgba(0, 79, 131, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 79, 131, 0.1), 0 10px 10px -5px rgba(0, 79, 131, 0.04);
+
+  --sidebar-width-open: 250px;
+  --sidebar-width-closed: 65px;
+  --transition-speed: 0.3s;
+  --border-radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 79, 131, 0.1);
+}
+
+
+.app {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-background);
+}
+
+/* Sidebar Styles - UNIVERSAL SCROLLING SOLUTION */
+.sidebar {
+  width: var(--sidebar-width-closed);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  background: linear-gradient(135deg, var(--color-default) 0%, var(--color-second) 100%);
+  backdrop-filter: blur(20px);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  z-index: 1000;
+  box-shadow: var(--shadow-xl);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Prevent scroll chaining */
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  width: var(--sidebar-width-open);
+  padding: var(--spacing-md);
+}
+
+/* Sidebar Content Container - This ensures proper scrolling */
+.sidebar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Allow flex child to shrink */
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--spacing-md);
+}
+
+/* Custom Scrollbar - Works on all platforms */
+.sidebar::-webkit-scrollbar,
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.sidebar-nav::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover);
+}
+
+/* Firefox scrollbar */
+.sidebar,
+.sidebar-nav {
+  scrollbar-width:var(--sidebar-width-closed);
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* Logo Section */
+.sidebar .logo_details {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2px;
+  padding: 10px 20px;
+  flex-shrink: 0; /* Never shrink this section */
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  background: var(--color-active);
+  border-radius: var(--radius-sm);
+}
+
+.sidebar .logo_details .icon {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: all var(--transition-normal) ease;
+}
+
+.sidebar .logo_details .logo_name {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  opacity: 0;
+  margin-left: var(--spacing-md);
+  transform: translateX(-1rem);
+  transition: all var(--transition-normal) ease;
+  white-space: nowrap;
+  background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+}
+
+.sidebar.open .logo_details .icon,
+.sidebar.open .logo_details .logo_name {
+  opacity: 1;
+  transform: translateX(0);
+  
+  
+}
+
+.sidebar .logo_details #btn {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-sm);
+  transform: translateY(-50%);
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--color-background);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  background: var(--color-hover);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.sidebar .logo_details #btn:hover {
+  background: var(--color-background);
+  color: var(--color-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.sidebar .logo_details #btn:active {
+  background: var(--color-hover);
+  color: var(--color-background);
+}
+
+/* Navigation List */
+.sidebar ul {
+  list-style: none;
+  padding: var(--spacing-md) 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+ 
+}
+
+.sidebar ul::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar ul li {
+  position: relative;
+  margin: var(--spacing-xs) var(--spacing-sm);
+  width: auto; /* Allow width to grow based on content */
+  min-width: 150px; /* Optional: set a reasonable minimum width */
+  max-width: 350px; /* Optional: limit max width */
+  white-space: nowrap; /* Prevent line breaks inside */
+  overflow: visible; /* Ensure content is visible */
+  
+}
+
+.sidebar ul li.active {
+  background: linear-gradient(135deg, var(--color-hover) 0%, var(--color-active) 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(0.125rem);
+  border: 1px solid var(--color-active);
+}
+
+.sidebar ul li.active a {
+  color: var(--color-default);
+  background: transparent;
+}
+
+.sidebar ul li.active a::before {
+  opacity: 0;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  padding: 0.695rem var(--spacing-xs);
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid transparent;
+  min-height: 48px;
+
+}
+
+.sidebar ul li a::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  background: linear-gradient(135deg, var(--color-hover), var(--color-active));
+  width: 30px;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  border-radius: var(--radius-lg);
+}
+
+.sidebar ul li a:hover::before {
+  opacity: 0.1;
+}
+.sidebar ul li.active a:hover {
+  color: var(--color-default);
+}
+
+.sidebar ul li a:hover {
+  color: var(--color-hover);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.sidebar ul li a svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  margin-right: var(--spacing-lg);
+  transition: all var(--transition-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar ul li a:hover svg {
+  transform: scale(1.1);
+  
+}
+
+.sidebar ul li a span,
+.sidebar ul li a .link_name {
+  opacity: 0;
+  transform: translateX(-0.5rem);
+  transition: all var(--transition-normal);
+  margin-left: 0.2rem;
+  white-space: nowrap;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar.open ul li a span,
+.sidebar.open ul li a .link_name {
+  opacity: 1;
+  transform: translateX(0);
+  flex-grow: 1;  /* Allow span to grow */
+  white-space: normal; /* Allow wrapping if preferred */
+  min-width: 0; /* Important for flex children to shrink properly */
+}
+
+/* Tooltip */
+.sidebar ul li .tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1rem);
+  transform: translateY(-50%);
+  background: var(--color-white);
+  color: var(--color-default);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all var(--transition-normal);
+  z-index: 1001;
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(20px);
+}
+
+.sidebar ul li .tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.25rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.25rem 0.25rem 0.25rem 0;
+  border-color: transparent var(--color-white) transparent transparent;
+}
+
+.sidebar ul li:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0.25rem);
+}
+
+.sidebar.open ul li .tooltip {
+  display: none;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  flex: 1;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 175px;
+  padding: var(--spacing-md);
+  min-height: 100vh;
+  background: var(--color-background);
+  position: relative;
+}
+
+.content-wrapper.shifted {
+  margin-left: 22%;
+}
+
+/* Mobile Menu Button - Only visible on mobile when sidebar is closed */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1002;
+  background: var(--color-white);
+  color: var(--color-default);
+  border: 2px solid var(--color-hover);
+  border-radius: var(--radius-lg);
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(20px);
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-btn:hover {
+  background: var(--color-hover);
+  transform: scale(1.05);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 1024px) {
+  :root {
+    --sidebar-width-open: 260px;
+  }
+
+  .sidebar .logo_details .logo_name {
+    font-size: 1.125rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  :root {
+    --sidebar-width-open: 240px;
+    --sidebar-width-closed: 0;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Hide mobile menu button when sidebar is open */
+  .sidebar.open ~ .mobile-menu-btn {
+    left: 17rem;
+  }
+
+  .sidebar {
+    width: 0;
+    transform: translateX(-100%);
+    transition: all var(--transition-normal);
+    width: var(--sidebar-width-open);
+    padding: var(--spacing-md);
+    /* Ensure proper scrolling on tablets */
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Mobile backdrop overlay */
+  .sidebar.open::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width-open);
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    transition: all var(--transition-normal);
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+    padding: 0.75rem;
+    padding-top: 4rem; /* Space for mobile menu button */
+  }
+
+  .content-wrapper.shifted {
+    margin-left: 0;
+  }
+
+  /* Enhanced menu items for better mobile interaction */
+  .sidebar ul li a {
+    padding: 1rem var(--spacing-md);
+    font-size: 0.95rem;
+    min-height: 3rem;
+  }
+
+  .sidebar .logo_details .logo_name {
+    opacity: 1;
+  }
+
+  .sidebar ul li a span,
+  .sidebar ul li a .link_name {
+    opacity: 1;
+  }
+
+  .sidebar ul li .tooltip {
+    display: none;
+  }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+  :root {
+    --sidebar-width-open: 280px;
+  }
+
+  .mobile-menu-btn {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .sidebar {
+    width: 100vw;
+    max-width: var(--sidebar-width-open);
+    /* Critical for mobile scrolling */
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar.open {
+    width: 100vw;
+  }
+
+  .content-wrapper {
+    padding: 0.5rem;
+    padding-top: 3.5rem; /* Space for mobile menu button */
+  }
+
+  .sidebar .logo_details {
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar .logo_details .logo_name {
+    font-size: 1rem;
+  }
+
+  .sidebar ul li {
+    margin: 0.375rem 0;
+  }
+
+  .sidebar ul li a {
+    padding: 0.875rem;
+    min-height: 52px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .sidebar .logo_details .logo_name {
+    font-size: 0.9375rem;
+  }
+
+  .sidebar ul li a span,
+  .sidebar ul li a .link_name {
+    font-size: 0.875rem;
+  }
+
+  .sidebar {
+    /* Ensure scrolling even on very small screens */
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* High Resolution Displays */
+@media (min-width: 1440px) {
+  .sidebar {
+    width: 5rem;
+  }
+
+  .sidebar.open {
+    width: 18rem;
+  }
+
+  .content-wrapper {
+    margin-left: 5rem;
+  }
+
+  .content-wrapper.shifted {
+    margin-left: 18rem;
+  }
+}
+
+/* Ultra-wide Displays */
+@media (min-width: 1920px) {
+  .sidebar.open {
+    width: 20rem;
+  }
+
+  .content-wrapper.shifted {
+    margin-left: 20rem;
+  }
+
+  .content-wrapper {
+    padding: var(--spacing-2xl);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .sidebar {
+    /* Better touch scrolling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar-nav {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar ul li a {
+    min-height: 52px;
+    padding: 0.875rem;
+  }
+
+  .sidebar .logo_details #btn {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .sidebar ul li a:hover {
+    transform: none;
+    background-color: transparent;
+  }
+
+  .sidebar ul li a:hover::before {
+    opacity: 0;
+  }
+
+  .sidebar ul li a:hover svg {
+    transform: none;
+  }
+
+  /* Add touch feedback */
+  .sidebar ul li a:active {
+    background-color: var(--color-light);
+    transform: scale(0.98);
+  }
+}
+
+/* Landscape orientation on mobile - Critical for proper scrolling */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .sidebar {
+    padding: 0.5rem;
+    /* Essential: Maintain scrolling in landscape */
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar .logo_details {
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar ul li {
+    margin: 0.25rem 0;
+  }
+
+  .sidebar ul li a {
+    padding: 0.5rem;
+    min-height: 40px;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .sidebar {
+    /* iOS Safari viewport height fix */
+    height: -webkit-fill-available;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* High DPI displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi) {
+  .sidebar {
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Focus States for Accessibility */
+.sidebar ul li a:focus {
+  outline: 2px solid var(--color-active);
+  outline-offset: 2px;
+}
+
+.sidebar .logo_details #btn:focus {
+  outline: 2px solid var(--color-active);
+  outline-offset: 2px;
+}
+
+/* Loading Animation */
+.sidebar.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.sidebar.loading ul li a {
+  background: linear-gradient(90deg, transparent, var(--color-surface), transparent);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Micro-interactions */
+.sidebar ul li a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 79, 131, 0.1), transparent);
+  transition: left var(--transition-normal);
+}
+
+.sidebar ul li a:hover::after {
+  left: 100%;
+}

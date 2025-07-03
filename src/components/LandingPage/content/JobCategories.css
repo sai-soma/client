@@ -1,0 +1,263 @@
+.jb-job-categories {
+    text-align: center;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 20px;
+    position: relative;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.jb-highlight1{
+     background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  /* from-yellow-500 via-red-500 to-pink-500 */
+  color: transparent;
+  background-clip: text;
+}
+
+.jb-highlight {
+    background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  /* from-yellow-500 via-red-500 to-pink-500 */
+  color: transparent;
+  background-clip: text;
+}
+
+@keyframes jb-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+.jb-companylist {
+    margin-bottom: 30px;
+}
+
+.jb-company-logos {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: -30px;
+}
+
+.jb-logo-slider {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    width: max-content;
+    animation: jb-scrollLogos 52s linear infinite;
+}
+
+@keyframes jb-scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.jb-logo-slider:hover {
+    animation-play-state: paused;
+}
+
+.jb-company-logo {
+    width: 150px;
+    height: 80px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.jb-company-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+.jb-carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+padding: 20px 0;
+}
+
+.jb-arrow-btn {
+    background: transparent; /* semi-transparent white */
+    -webkit-backdrop-filter: blur(10px); /* for Safari support */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 55px;
+    font-weight: bold;
+    height: 220px;
+    color: #333;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+
+
+.jb-carousel-container:hover .jb-arrow-btn {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.jb-arrow-btn:hover {
+    background: rgba(5,135,209,255);
+    opacity: 0.5;
+    color: white;
+    transform: scale(1.1);
+}
+
+.jb-left {
+    left: 0px;
+}
+
+.jb-right {
+    right: 0px;
+}
+
+.jb-jobs {
+    margin-top: 50px;
+}
+
+.jb-job-list {
+  display: flex;
+  overflow-x:scroll;
+  scroll-behavior:smooth;
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.jb-job-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+
+.jb-job-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 500px;
+    min-width: 200px;
+    border: 2px solid gray;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    perspective: 1000px;
+    height: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+
+}
+
+.jb-job-card:hover {
+    border-color: rgba(5,135,209,255);
+}
+
+.jb-job-icon {
+    width: 50px;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+    margin-bottom: 1px;
+}
+
+.jb-job-card:hover .jb-job-icon {
+    transform: rotate(1deg) scale(1.2);
+}
+
+.jb-heading {
+    color: blue;
+    font-weight: bold;
+    font-size: clamp(2.5rem, 2.3vw, 3.0rem);
+    margin-top: 35px;
+    animation: jb-fadeInDown 1s ease-in-out;
+}
+
+.jb-job-title {
+    color: rgba(5,135,209,255);
+    transition: color 0.3s ease-in-out;
+    font-size: clamp(1.2rem, 1.8vw, 1.3rem);
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+
+.jb-subheading {
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-top: -20px;
+}
+
+.jb-p1 {
+    font-size: 15px;
+    margin-top: 1px;
+}
+
+.jb-p2 {
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+@keyframes jb-fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .jb-logo-slider {
+        gap: 50px;
+        margin-top: 10px;
+        animation: jb-scrollLogos 15s linear infinite;
+    }
+
+    .jb-job-list {
+        padding: 20px;
+    }
+
+    .jb-job-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .jb-heading {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .jb-job-title {
+        font-size: 1.3rem;
+    }
+
+    .jb-arrow-btn {
+        padding: 1px 2px;
+        font-size: 10px;
+    }
+}
+.jb-job-card {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
+}
+
+.jb-job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.jb-job-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.jb-job-list::-webkit-scrollbar {
+  display: none;
+}

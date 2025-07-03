@@ -1,0 +1,263 @@
+/* General Layout */
+.how-it-works {
+  color: black;
+  padding: 24px 24px;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Prevent overflow on small screens */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.how-it-works-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 24px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  gap: 24px; /* Add spacing if multiple children */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* Left Section */
+.how-it-works-left-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.how-it-works-woman-img {
+  width: 480px;
+}
+
+.how-it-works-profile-status {
+  position: absolute;
+  background-color: blue;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid skyblue;
+  text-align: center;
+  top: 60px;
+  left: 40px;
+  width: 150px;
+}
+
+.how-it-works-profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.how-it-works-profile-text {
+  font-size: 14px;
+  margin-top: 6px;
+  color: white;
+}
+
+.how-it-works-profile-progress {
+  font-size: 14px;
+  color: white;
+  font-weight: bolder;
+}
+
+/* Right Section */
+.how-it-works-right-section {
+  flex: 1;
+  padding-left: 50px;
+}
+
+.how-it-works-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.how-it-works-highlight {
+  background: linear-gradient(to right, #f59e0b, #f87171, #ec4899);
+  /* from-yellow-500 via-red-500 to-pink-500 */
+  color: transparent;
+  background-clip: text;
+}
+
+.how-it-works-description {
+
+  margin-bottom: 20px;
+}
+
+/* Steps */
+.how-it-works-steps {
+  margin-top: 20px;
+}
+
+.how-it-works-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.how-it-works-step-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.how-it-works-step-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.how-it-works-step-desc {
+  font-size: 14px;
+}
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 16px; /* Reduce padding for smaller screens */
+    width: 100%; /* Full width */
+  }
+
+  .how-it-works-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 16px; /* Adjust padding */
+  }
+
+  .how-it-works-left-section {
+    justify-content: center; /* Center content */
+    margin-bottom: 20px; /* Add space below */
+  }
+
+  .how-it-works-woman-img {
+    width: 100%; /* Responsive image */
+    max-width: 300px; /* Limit max width */
+  }
+
+  .how-it-works-right-section {
+    padding-left: 0; /* Remove left padding */
+  }
+
+  .how-it-works-title {
+    font-size: 24px; /* Smaller title */
+  }
+
+  .how-it-works-step-title {
+    font-size: 16px; /* Smaller step title */
+  }
+
+  .how-it-works-step-desc {
+    font-size: 12px; /* Smaller step description */
+  }
+ .how-it-works-profile-status {
+    width: 120px;
+    padding: 8px;
+    top: 160px;
+    left: 0px;
+    height: 100px;
+  }
+  .how-it-works-profile-img {
+    width: 20px;
+    height: 20px;
+  }
+  .how-it-works-profile-text {
+    font-size: 8px;
+    margin-top: 4px;
+  }
+  .how-it-works-profile-progress {
+    font-size: 6px;
+    font-weight: 600;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .how-it-works {
+    padding: 20px; /* Adjust padding */
+  }
+
+  .how-it-works-container {
+    flex-direction: row; /* Keep items in a row */
+    padding: 24px; /* Adjust padding */
+  }
+
+  .how-it-works-left-section {
+    justify-content: center; /* Center content */
+  }
+
+  .how-it-works-woman-img {
+    width: 100%; /* Responsive image */
+    max-width: 400px; /* Limit max width */
+  }
+
+  .how-it-works-right-section {
+    padding-left: 30px; /* Adjust left padding */
+  }
+
+  .how-it-works-title {
+    font-size: 28px; /* Adjust title size */
+  }
+
+  .how-it-works-step-title {
+    font-size: 18px; /* Adjust step title size */
+  }
+
+  .how-it-works-step-desc {
+    font-size: 14px; /* Adjust step description size */
+  }
+  .how-it-works-profile-status {
+    width: 135px;
+    padding: 10px;
+    top: 250px;
+    left: 40px;
+  }
+  .how-it-works-profile-img {
+    width: 25px;
+    height: 25px;
+  }
+  .how-it-works-profile-text {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  .how-it-works-profile-progress {
+    font-size: 13px;
+    font-weight: 700;
+  }
+}
+
+/* Large Desktops (769px and above) */
+@media (min-width: 769px) {
+  .how-it-works {
+    padding: 24px; /* Maintain padding */
+  }
+
+  .how-it-works-container {
+    padding: 32px 24px; /* Maintain padding */
+  }
+
+  .how-it-works-left-section {
+    justify-content: center; /* Center content */
+  }
+
+  .how-it-works-woman-img {
+    width: 480px; /* Original width */
+  }
+
+  .how-it-works-right-section {
+    padding-left: 50px; /* Maintain left padding */
+  }
+
+  .how-it-works-title {
+    font-size: 32px; /* Original title size */
+  }
+
+  .how-it-works-step-title {
+    font-size: 18px; /* Original step title size */
+  }
+
+  .how-it-works-step-desc {
+    font-size: 14px; /* Original step description size */
+  }
+}

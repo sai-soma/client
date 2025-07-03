@@ -1,0 +1,409 @@
+.aj-dashboard-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.aj-header {
+  background-color: #f5f7fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.aj-profile-section {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.aj-profile-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.aj-profile-info p {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.aj-stats-section {
+  display: flex;
+  gap: 10px;
+  flex: 2;
+}
+
+.aj-stat-card {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aj-in-progress {
+  background-color: rgba(5, 135, 209, 255);
+}
+
+.aj-rejected {
+  background-color: #e74c3c;
+}
+
+.aj-selected {
+  background-color: #2ecc71;
+}
+
+.aj-joined {
+  background-color: #8e44ad;
+}
+
+.aj-stat-icon {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.aj-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.aj-label {
+  font-size: 12px;
+}
+
+.aj-referrals-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.aj-referrals-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.aj-referrals-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.aj-view-all {
+  cursor: pointer;
+  color: rgba(5, 135, 209, 255);
+  font-weight: bold;
+}
+
+.aj-referral-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures columns have fixed widths */
+}
+
+.aj-referral-row {
+  border-bottom: 1px solid #eee;
+}
+
+.aj-referral-row:last-child {
+  border-bottom: none;
+}
+
+th,
+td {
+  padding: 15px 10px;
+  text-align: left;
+  vertical-align: middle; /* Vertically align text in both headers and cells */
+}
+
+th {
+  background-color: #f5f7fa; /* Background color for table headers */
+  font-weight: bold;
+}
+
+.aj-status-cell {
+  text-align: center; /* Center the status icon and text */
+}
+
+.aj-status-badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.aj-status-in-progress {
+  background-color: #e0f7fa;
+  color: #0097a7;
+}
+
+.aj-status-rejected {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.aj-status-selected {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.aj-status-joined {
+  background-color: #f3e5f5;
+  color: #6a1b9a;
+}
+
+.aj-no-jobs {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  padding: 20px 0;
+}
+
+.aj-stat-icon {
+  font-size: 20px; /* Adjust size for clarity */
+}
+
+.aj-number {
+  font-size: 26px; /* Increase font size for better visibility */
+}
+
+.aj-label {
+  font-size: 14px; /* Adjust label font size for readability */
+}
+
+.aj-search-input-wrapper {
+  position: relative;
+  width: 850px;
+  margin: 0 auto;
+}
+
+.aj-search-icon {
+  position: absolute;
+  top: 70%;
+  right: 12px;
+  transform: translateY(-80%);
+  color: #555;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.aj-search-input {
+  width: 100%;
+  padding: 20px 20px; /* Add left padding for icon */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.aj-search-input:focus {
+  outline: none;
+  border-color: rgba(5, 135, 209, 1);
+  box-shadow: 0 0 0 3px rgba(5, 135,  209,  0.2);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: bold;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.page-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-button:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+/* Resigned Stat Card */
+.aj-stat-card.aj-resigned {
+  background-color: #c4d03e;
+}
+
+.aj-stat-card.aj-resigned .aj-number {
+  color: white;
+}
+
+.aj-stat-card.aj-resigned .aj-label {
+  color: white;
+}
+
+/* Resigned Badge */
+.aj-status-resigned {
+  background-color: #e0ea73;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .aj-search-input-wrapper {
+    width: 90%;
+  }
+
+  .aj-stats-section {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .aj-stat-card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aj-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aj-profile-section {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .aj-stats-section {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .aj-stat-card {
+    width: 100%;
+  }
+
+  .aj-referrals-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .aj-referral-table th,
+  .aj-referral-table td {
+    font-size: 8px;
+    padding: 10px 5px;
+  }
+
+  .aj-search-input-wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .aj-search-input {
+    font-size: 13px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .page-button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aj-header,
+  .aj-referrals-section,
+  .aj-search-input-wrapper {
+    padding: 6px;
+  }
+
+  .aj-profile-info h2 {
+    font-size: 12px;
+  }
+
+  .aj-profile-info p {
+    font-size: 12px;
+  }
+
+  .aj-stat-icon {
+    font-size: 12px;
+  }
+
+  .aj-number {
+    font-size: 14px;
+  }
+  .aj-referral-table th,
+  .aj-referral-table td {
+    font-size: 4px;
+  }
+
+  .aj-label {
+    font-size: 12px;
+  }
+
+  .aj-referral-table th,
+  .aj-referral-table td {
+    font-size: 8px;
+    padding: 8px 4px;
+  }
+
+  .aj-status-badge {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}

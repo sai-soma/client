@@ -1,0 +1,29 @@
+* {
+  font-family: "Poppins", sans-serif !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Block horizontal scrolling */
+  width: 100vw;
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  min-height: 100vh;
+  /* Optionally, set max-width with margin auto to center */
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif !important;
+}

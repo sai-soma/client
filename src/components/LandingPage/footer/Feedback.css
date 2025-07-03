@@ -1,0 +1,211 @@
+.fb-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ebf4ff, #e6f7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.fb-home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.fb-home-btn:hover {
+  background-color: #1e40af;
+}
+
+.fb-card {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fb-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.fb-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.fb-textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.fb-textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.fb-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.fb-button:hover {
+  background-color: #1e40af;
+}
+
+/* Responsive styles */
+
+/* Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .fb-container {
+    padding: 1rem;
+  }
+
+  .fb-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .fb-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .fb-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fb-textarea {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+  }
+
+  .fb-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+  }
+
+  .fb-home-btn {
+    top: 15px;
+    left: 15px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .fb-container {
+    padding: 1.5rem 2rem;
+    margin-top: 50px;
+  }
+
+  .fb-card {
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+    border-radius: 1.25rem;
+  }
+
+  .fb-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .fb-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .fb-textarea {
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+  }
+
+  .fb-button {
+    padding: 0.7rem 1.4rem;
+    font-size: 1.05rem;
+    border-radius: 0.7rem;
+  }
+
+  .fb-home-btn {
+    top: 18px;
+    left: 18px;
+    padding: 0.45rem 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop (>= 769px) */
+@media (min-width: 769px) {
+  .fb-container {
+    padding: 3rem 4rem;
+  }
+
+  .fb-card {
+    max-width: 700px;
+  }
+
+  .fb-title {
+    font-size: 2.5rem;
+  }
+
+  .fb-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .fb-textarea {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .fb-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .fb-home-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+}
