@@ -9,7 +9,6 @@ import ResetPassword from "./components/LandingPage/Auth/ResetPassword";
 import VerifySuccess from "./components/LandingPage/Auth/VerifySuccess";
 import VerifyEmail from "./components/LandingPage/Auth/VerifyEmail";
 import SetPassword from "./components/LandingPage/Auth/SetPassword";
-import 'intro.js/introjs.css';
 
 // Admin & User Pages
 import AdminPage from "./pages/AdminPage";
