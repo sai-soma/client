@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import VerifySuccess from "./VerifySuccess"; // Import the VerifySuccess component
 
-const EmailVerify = () => {
+const VerifyEmail = () => {
   const [message, setMessage] = useState("");
   const [searchParams] = useSearchParams();
   const [isVerified, setIsVerified] = useState(false); // Track verification status
@@ -40,4 +40,4 @@ const EmailVerify = () => {
   );
 };
 
-export default EmailVerify;
+export default VerifyEmail;
