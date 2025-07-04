@@ -47,20 +47,26 @@ const Reviews = () => {
   ];
 
   useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const res = await axios.get("${BASE_URL}api/reviews");
+  const fetchReviews = async () => {
+    try {
+      const res = await axios.get(`${BASE_URL}api/reviews`);
+      if (Array.isArray(res.data) && res.data.length > 0) {
         const sorted = res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setReviews(sorted);
-      } catch (err) {
-        console.error("Error fetching reviews:", err);
+      } else {
+        setReviews([]); // API returned empty or invalid response
       }
-    };
+    } catch (err) {
+      console.warn("No reviews fetched from API or failed to fetch."); // Quiet fallback
+      setReviews([]); // Optional: make sure state is consistent
+    }
+  };
 
-    fetchReviews();
-    const interval = setInterval(fetchReviews, 30000);
-    return () => clearInterval(interval);
-  }, []);
+  fetchReviews();
+  const interval = setInterval(fetchReviews, 30000);
+  return () => clearInterval(interval);
+}, []);
+
 
   // Combine fetched reviews with hardcoded reviews if less than 5
   const combinedReviews = reviews.length < 5 ? [...new Set([...reviews, ...hardcodedReviews])].slice(0, 5) : reviews;
